@@ -11,9 +11,6 @@ $search.addEventListener("input", filter)
 let $start = document.getElementById("start")
 $start.addEventListener("change", filter)
 
-let $end = document.getElementById("end")
-$end.addEventListener("change", filter)
-
 let $reset = document.getElementById("reset")
 $reset.addEventListener("click", () => {
     $elevation.value = ""
@@ -26,11 +23,8 @@ $reset.addEventListener("click", () => {
 function filter() {
     let vegetable = $search.value?.trim().toLowerCase(),
         elevation = $elevation.value,
-        start = $start.value.slice(-5),
-        end = $end.value.slice(-5),
-        header = true
-    for (let row of document.querySelectorAll(`tr`)) {
-        if (header) { header = false; continue }
+        start = $start.value.slice(-5)
+    for (let row of document.querySelectorAll(`tbody>tr`)) {
         let dVegetable = row.dataset.vegetable,
             dElevation = row.dataset.elevation,
             dStart = row.dataset.start,
@@ -38,8 +32,7 @@ function filter() {
         row.hidden = 
             !((!dVegetable || dVegetable.includes(vegetable))
             && (!elevation || !dElevation || dElevation === elevation)
-            && (!start || !dStart || start <= dEnd && start >= dStart)
-            && (!end || !dEnd || dEnd <= end))
+            && (!start || !dStart || start <= dEnd && start >= dStart))
     }
     $count.textContent =
         Array.from(document.querySelectorAll('tr:not([hidden])')).length - 1
