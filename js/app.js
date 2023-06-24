@@ -38,7 +38,7 @@ function filter() {
         row.hidden = 
             !((!dVegetable || dVegetable.includes(vegetable))
             && (!elevation || !dElevation || dElevation === elevation)
-            && (!start || !dStart || dStart >= start)
+            && (!start || !dStart || start <= dEnd && start >= dStart)
             && (!end || !dEnd || dEnd <= end))
     }
     $count.textContent =
