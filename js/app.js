@@ -16,12 +16,11 @@ $reset.addEventListener("click", () => {
     $elevation.value = ""
     $search.value = ""
     $start.value = ""
-    $end.value = ""
     filter()
 })
 
 function filter() {
-    let vegetable = $search.value?.trim().toLowerCase(),
+    let vegetable = $search.value.trim().toLowerCase(),
         elevation = $elevation.value,
         start = $start.value.slice(-5)
     for (let row of document.querySelectorAll(`tbody>tr`)) {
@@ -35,7 +34,7 @@ function filter() {
             && (!start || !dStart || start <= dEnd && start >= dStart))
     }
     $count.textContent =
-        Array.from(document.querySelectorAll('tr:not([hidden])')).length - 1
+        document.querySelectorAll('tbody>tr:not([hidden])').length 
 }
 
 filter()
