@@ -1,10 +1,6 @@
 (() => {
 
 let $count = document.getElementById("count")
-function updateCount() {
-    $count.textContent =
-        Array.from(document.querySelectorAll('tr:not([hidden])')).length - 1
-}
 
 let $elevation = document.getElementById("elevation")
 $elevation.addEventListener("change", filter)
@@ -45,7 +41,8 @@ function filter() {
             && (!start || !dStart || dStart >= start)
             && (!end || !dEnd || dEnd <= end))
     }
-    updateCount()
+    $count.textContent =
+        Array.from(document.querySelectorAll('tr:not([hidden])')).length - 1
 }
 
 filter()

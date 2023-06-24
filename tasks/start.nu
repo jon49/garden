@@ -42,5 +42,5 @@ $rawData
 open ./src/index.html
 | str replace '{{data}}' $data
 | str replace '{{vegetables}}' $vegetables
-| save -f ./docs/index.html
+| save -f ./index.html
 
