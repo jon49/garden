@@ -1,0 +1,35 @@
+:root {
+    --highlight: aliceblue;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --highlight: #000;
+    }
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+}
+
+tbody tr:hover {
+  background: var(--highlight);
+}
+
+td, th {
+  border: 1px solid var(--dark);
+  padding: 0.5em;
+}
+
+body {
+    margin-bottom: 25%;
+}
+
+select {
+    font-size: 1.5em;
+}
+

@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet">
+        <!-- Source https://prescottvalleynursery.com/2015/05/15/garden-guide-planting-dates/ -->
+    </head>
+    <body>
+
+<h1>Planting Dates</h1>
+
+<h2>Filter</h2>
+<div class=row>
+    <div>
+        <label>Elevation</label><br>
+        <select id=elevation>
+            <option selected value=""></option>
+            <option value="3000">3000 - 4500</option>
+            <option value="4500">4500 - 6000</option>
+            <option value="6000">Above 6000</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="search">Search</label><br>
+        <input id="search" list="vegetables" placeholder="Search" autocomplete="off">
+        <datalist id="vegetables"><option value="Asparagus"></option><option value="Bean (edible soy)"></option><option value="Bean, bush"></option><option value="Bean, lima"></option><option value="Bean, pole"></option><option value="Beet"></option><option value="Broccoli"></option><option value="Brussel Sprouts"></option><option value="Cabbage (plant)"></option><option value="Cabbage (seed)"></option><option value="Cantaloupe"></option><option value="Carrot"></option><option value="Cauliflower (plant)"></option><option value="Cauliflower (seed)"></option><option value="Celery"></option><option value="Chard"></option><option value="Chinese Cabbage"></option><option value="Collard"></option><option value="Corn, Mexican June"></option><option value="Corn, sweet"></option><option value="Cucumber"></option><option value="Eggplant"></option><option value="Endive"></option><option value="Garlic"></option><option value="Garlic, clove"></option><option value="Horseradish"></option><option value="Kale"></option><option value="Kohlrabi"></option><option value="Leek"></option><option value="Lettuce, head"></option><option value="Lettuce, leaf"></option><option value="Muskmelon"></option><option value="Mustard"></option><option value="Okra"></option><option value="Onion (green, bunch)"></option><option value="Onion, dry (seeds)"></option><option value="Onion, dry (sets)"></option><option value="Parsley"></option><option value="Parsnip"></option><option value="Pea, fall"></option><option value="Pea, spring"></option><option value="Pepper (plants)"></option><option value="Pepper (seed)"></option><option value="Potato, Irish"></option><option value="Potato, sweet"></option><option value="Pumpkin"></option><option value="Radish"></option><option value="Rhubarb"></option><option value="Rutabaga"></option><option value="Salsify"></option><option value="Spinach"></option><option value="Squash, summer"></option><option value="Squash, winter"></option><option value="Tomato (plants)"></option><option value="Tomato (seed)"></option><option value="Turnip"></option><option value="Watermelon"></option></datalist>
+    </div>
+
+    <div>
+        <label for=start>Start Date</label><br>
+        <input type="date" id="start" name="start">
+    </div>
+
+    <div>
+        <label for=end>End Date</label><br>
+        <input type="date" id="end" name="end">
+    </div>
+
+    <div>
+        <br>
+        <button id=reset>Reset</button>
+    </div>
+</div>
+
+<br>
+
+<h2>Growing Season</h2>
+
+<p>Vegetables and grow season (<span id=count></span>):</p>
+<table>
+    <thead>
+        <th>Vegetable</th>
+        <th>Elevation (ft)</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+    </thead>
+    <tbody><tr data-vegetable="asparagus" data-elevation="3000" data-start="02-15" data-end="04-01">
+        <td>Asparagus</td>
+        <td>3000 - 4500</td>
+        <td>Feb 15</td>
+        <td>Apr 01</td>
+    </tr><tr data-vegetable="asparagus" data-elevation="4500" data-start="04-01" data-end="04-30">
+        <td>Asparagus</td>
+        <td>4500 - 6000</td>
+        <td>Apr 01</td>
+        <td>Apr 30</td>
+    </tr><tr data-vegetable="asparagus" data-elevation="6000" data-start="04-15" data-end="05-15">
+        <td>Asparagus</td>
+        <td>Above 6000</td>
+        <td>Apr 15</td>
+        <td>May 15</td>
+    </tr><tr data-vegetable="bean, bush" data-elevation="3000" data-start="04-25" data-end="07-15">
+        <td>Bean, bush</td>
+        <td>3000 - 4500</td>
+        <td>Apr 25</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="bean, bush" data-elevation="4500" data-start="05-15" data-end="07-01">
+        <td>Bean, bush</td>
+        <td>4500 - 6000</td>
+        <td>May 15</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="bean, bush" data-elevation="6000" data-start="05-25" data-end="06-15">
+        <td>Bean, bush</td>
+        <td>Above 6000</td>
+        <td>May 25</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="bean, pole" data-elevation="3000" data-start="04-25" data-end="07-15">
+        <td>Bean, pole</td>
+        <td>3000 - 4500</td>
+        <td>Apr 25</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="bean, pole" data-elevation="4500" data-start="05-15" data-end="07-01">
+        <td>Bean, pole</td>
+        <td>4500 - 6000</td>
+        <td>May 15</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="bean, pole" data-elevation="6000" data-start="05-25" data-end="06-15">
+        <td>Bean, pole</td>
+        <td>Above 6000</td>
+        <td>May 25</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="bean, lima" data-elevation="3000" data-start="04-25" data-end="07-15">
+        <td>Bean, lima</td>
+        <td>3000 - 4500</td>
+        <td>Apr 25</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="bean, lima" data-elevation="4500" data-start="05-15" data-end="07-01">
+        <td>Bean, lima</td>
+        <td>4500 - 6000</td>
+        <td>May 15</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="bean, lima" data-elevation="6000" data-start="05-25" data-end="06-15">
+        <td>Bean, lima</td>
+        <td>Above 6000</td>
+        <td>May 25</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="bean (edible soy)" data-elevation=" 3000" data-start="04-15" data-end="07-15">
+        <td>Bean (edible soy)</td>
+        <td>Above 6000</td>
+        <td>Apr 15</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="bean (edible soy)" data-elevation=" 4500" data-start="05-25" data-end="07-01">
+        <td>Bean (edible soy)</td>
+        <td>Above 6000</td>
+        <td>May 25</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="beet" data-elevation="3000" data-start="03-01" data-end="05-15">
+        <td>Beet</td>
+        <td>3000 - 4500</td>
+        <td>Mar 01</td>
+        <td>May 15</td>
+    </tr><tr data-vegetable="beet" data-elevation="4500" data-start="05-01" data-end="07-15">
+        <td>Beet</td>
+        <td>4500 - 6000</td>
+        <td>May 01</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="beet" data-elevation="6000" data-start="05-15" data-end="06-15">
+        <td>Beet</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="broccoli" data-elevation="3000" data-start="04-15" data-end="07-15">
+        <td>Broccoli</td>
+        <td>3000 - 4500</td>
+        <td>Apr 15</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="broccoli" data-elevation="4500" data-start="04-01" data-end="07-01">
+        <td>Broccoli</td>
+        <td>4500 - 6000</td>
+        <td>Apr 01</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="brussel sprouts" data-elevation="3000" data-start="07-01" data-end="08-01">
+        <td>Brussel Sprouts</td>
+        <td>3000 - 4500</td>
+        <td>Jul 01</td>
+        <td>Aug 01</td>
+    </tr><tr data-vegetable="brussel sprouts" data-elevation="4500" data-start="06-01" data-end="07-01">
+        <td>Brussel Sprouts</td>
+        <td>4500 - 6000</td>
+        <td>Jun 01</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="brussel sprouts" data-elevation="6000" data-start="05-15" data-end="06-15">
+        <td>Brussel Sprouts</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="cabbage (seed)" data-elevation="3000" data-start="02-15" data-end="04-15">
+        <td>Cabbage (seed)</td>
+        <td>3000 - 4500</td>
+        <td>Feb 15</td>
+        <td>Apr 15</td>
+    </tr><tr data-vegetable="cabbage (seed)" data-elevation="4500" data-start="03-15" data-end="03-15">
+        <td>Cabbage (seed)</td>
+        <td>4500 - 6000</td>
+        <td>Mar 15</td>
+        <td>Mar 15</td>
+    </tr><tr data-vegetable="cabbage (seed)" data-elevation="6000" data-start="04-01" data-end="04-01">
+        <td>Cabbage (seed)</td>
+        <td>Above 6000</td>
+        <td>Apr 01</td>
+        <td>Apr 01</td>
+    </tr><tr data-vegetable="cabbage (plant)" data-elevation="3000" data-start="03-15" data-end="05-01">
+        <td>Cabbage (plant)</td>
+        <td>3000 - 4500</td>
+        <td>Mar 15</td>
+        <td>May 01</td>
+    </tr><tr data-vegetable="cabbage (plant)" data-elevation="3000" data-start="07-10" data-end="08-20">
+        <td>Cabbage (plant)</td>
+        <td>3000 - 4500</td>
+        <td>Jul 10</td>
+        <td>Aug 20</td>
+    </tr><tr data-vegetable="cabbage (plant)" data-elevation="4500" data-start="05-01" data-end="06-01">
+        <td>Cabbage (plant)</td>
+        <td>4500 - 6000</td>
+        <td>May 01</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="cabbage (plant)" data-elevation="6000" data-start="05-15" data-end="06-15">
+        <td>Cabbage (plant)</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="cantaloupe" data-elevation="3000" data-start="05-01" data-end="06-20">
+        <td>Cantaloupe</td>
+        <td>3000 - 4500</td>
+        <td>May 01</td>
+        <td>Jun 20</td>
+    </tr><tr data-vegetable="cantaloupe" data-elevation="4500" data-start="05-15" data-end="06-15">
+        <td>Cantaloupe</td>
+        <td>4500 - 6000</td>
+        <td>May 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="cantaloupe" data-elevation="6000" data-start="05-25" data-end="06-10">
+        <td>Cantaloupe</td>
+        <td>Above 6000</td>
+        <td>May 25</td>
+        <td>Jun 10</td>
+    </tr><tr data-vegetable="carrot" data-elevation="3000" data-start="03-01" data-end="05-10">
+        <td>Carrot</td>
+        <td>3000 - 4500</td>
+        <td>Mar 01</td>
+        <td>May 10</td>
+    </tr><tr data-vegetable="carrot" data-elevation="3000" data-start="07-15" data-end="09-15">
+        <td>Carrot</td>
+        <td>3000 - 4500</td>
+        <td>Jul 15</td>
+        <td>Sep 15</td>
+    </tr><tr data-vegetable="carrot" data-elevation="4500" data-start="05-01" data-end="07-15">
+        <td>Carrot</td>
+        <td>4500 - 6000</td>
+        <td>May 01</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="carrot" data-elevation="6000" data-start="05-15" data-end="07-01">
+        <td>Carrot</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="cauliflower (seed)" data-elevation="3000" data-start="02-15" data-end="04-15">
+        <td>Cauliflower (seed)</td>
+        <td>3000 - 4500</td>
+        <td>Feb 15</td>
+        <td>Apr 15</td>
+    </tr><tr data-vegetable="cauliflower (seed)" data-elevation="4500" data-start="03-15" data-end="03-15">
+        <td>Cauliflower (seed)</td>
+        <td>4500 - 6000</td>
+        <td>Mar 15</td>
+        <td>Mar 15</td>
+    </tr><tr data-vegetable="cauliflower (seed)" data-elevation="6000" data-start="04-01" data-end="04-01">
+        <td>Cauliflower (seed)</td>
+        <td>Above 6000</td>
+        <td>Apr 01</td>
+        <td>Apr 01</td>
+    </tr><tr data-vegetable="cauliflower (plant)" data-elevation="3000" data-start="03-15" data-end="05-01">
+        <td>Cauliflower (plant)</td>
+        <td>3000 - 4500</td>
+        <td>Mar 15</td>
+        <td>May 01</td>
+    </tr><tr data-vegetable="cauliflower (plant)" data-elevation="3000" data-start="07-10" data-end="08-20">
+        <td>Cauliflower (plant)</td>
+        <td>3000 - 4500</td>
+        <td>Jul 10</td>
+        <td>Aug 20</td>
+    </tr><tr data-vegetable="cauliflower (plant)" data-elevation="4500" data-start="05-01" data-end="06-01">
+        <td>Cauliflower (plant)</td>
+        <td>4500 - 6000</td>
+        <td>May 01</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="cauliflower (plant)" data-elevation="6000" data-start="05-15" data-end="06-15">
+        <td>Cauliflower (plant)</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="celery" data-elevation="3000" data-start="05-15" data-end="06-20">
+        <td>Celery</td>
+        <td>3000 - 4500</td>
+        <td>May 15</td>
+        <td>Jun 20</td>
+    </tr><tr data-vegetable="celery" data-elevation="4500" data-start="06-15" data-end="07-15">
+        <td>Celery</td>
+        <td>4500 - 6000</td>
+        <td>Jun 15</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="chard" data-elevation="3000" data-start="02-15" data-end="04-30">
+        <td>Chard</td>
+        <td>3000 - 4500</td>
+        <td>Feb 15</td>
+        <td>Apr 30</td>
+    </tr><tr data-vegetable="chard" data-elevation="3000" data-start="07-15" data-end="09-15">
+        <td>Chard</td>
+        <td>3000 - 4500</td>
+        <td>Jul 15</td>
+        <td>Sep 15</td>
+    </tr><tr data-vegetable="chard" data-elevation="4500" data-start="03-01" data-end="04-10">
+        <td>Chard</td>
+        <td>4500 - 6000</td>
+        <td>Mar 01</td>
+        <td>Apr 10</td>
+    </tr><tr data-vegetable="chard" data-elevation="4500" data-start="07-01" data-end="08-01">
+        <td>Chard</td>
+        <td>4500 - 6000</td>
+        <td>Jul 01</td>
+        <td>Aug 01</td>
+    </tr><tr data-vegetable="chinese cabbage" data-elevation="3000" data-start="07-01" data-end="09-15">
+        <td>Chinese Cabbage</td>
+        <td>3000 - 4500</td>
+        <td>Jul 01</td>
+        <td>Sep 15</td>
+    </tr><tr data-vegetable="chinese cabbage" data-elevation="4500" data-start="06-01" data-end="07-15">
+        <td>Chinese Cabbage</td>
+        <td>4500 - 6000</td>
+        <td>Jun 01</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="chinese cabbage" data-elevation="6000" data-start="05-15" data-end="06-15">
+        <td>Chinese Cabbage</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="collard" data-elevation="3000" data-start="06-15" data-end="08-01">
+        <td>Collard</td>
+        <td>3000 - 4500</td>
+        <td>Jun 15</td>
+        <td>Aug 01</td>
+    </tr><tr data-vegetable="collard" data-elevation="4500" data-start="06-01" data-end="07-15">
+        <td>Collard</td>
+        <td>4500 - 6000</td>
+        <td>Jun 01</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="collard" data-elevation="6000" data-start="05-15" data-end="06-15">
+        <td>Collard</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="corn, sweet" data-elevation="3000" data-start="05-10" data-end="07-15">
+        <td>Corn, sweet</td>
+        <td>3000 - 4500</td>
+        <td>May 10</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="corn, sweet" data-elevation="4500" data-start="05-25" data-end="07-01">
+        <td>Corn, sweet</td>
+        <td>4500 - 6000</td>
+        <td>May 25</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="corn, sweet" data-elevation="6000" data-start="05-15" data-end="07-01">
+        <td>Corn, sweet</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="corn, mexican june" data-elevation="3000" data-start="05-10" data-end="07-15">
+        <td>Corn, Mexican June</td>
+        <td>3000 - 4500</td>
+        <td>May 10</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="corn, mexican june" data-elevation="4500" data-start="05-25" data-end="06-15">
+        <td>Corn, Mexican June</td>
+        <td>4500 - 6000</td>
+        <td>May 25</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="corn, mexican june" data-elevation="6000" data-start="06-01" data-end="06-10">
+        <td>Corn, Mexican June</td>
+        <td>Above 6000</td>
+        <td>Jun 01</td>
+        <td>Jun 10</td>
+    </tr><tr data-vegetable="cucumber" data-elevation="3000" data-start="05-10" data-end="06-15">
+        <td>Cucumber</td>
+        <td>3000 - 4500</td>
+        <td>May 10</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="cucumber" data-elevation="4500" data-start="05-15" data-end="06-15">
+        <td>Cucumber</td>
+        <td>4500 - 6000</td>
+        <td>May 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="eggplant" data-elevation="3000" data-start="05-01" data-end="06-15">
+        <td>Eggplant</td>
+        <td>3000 - 4500</td>
+        <td>May 01</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="eggplant" data-elevation="4500" data-start="05-15" data-end="06-15">
+        <td>Eggplant</td>
+        <td>4500 - 6000</td>
+        <td>May 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="eggplant" data-elevation="6000" data-start="06-01" data-end="06-25">
+        <td>Eggplant</td>
+        <td>Above 6000</td>
+        <td>Jun 01</td>
+        <td>Jun 25</td>
+    </tr><tr data-vegetable="endive" data-elevation="3000" data-start="02-01" data-end="04-01">
+        <td>Endive</td>
+        <td>3000 - 4500</td>
+        <td>Feb 01</td>
+        <td>Apr 01</td>
+    </tr><tr data-vegetable="endive" data-elevation="4500" data-start="04-15" data-end="06-15">
+        <td>Endive</td>
+        <td>4500 - 6000</td>
+        <td>Apr 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="endive" data-elevation="6000" data-start="05-15" data-end="06-15">
+        <td>Endive</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="garlic" data-elevation="3000" data-start="02-15" data-end="04-10">
+        <td>Garlic</td>
+        <td>3000 - 4500</td>
+        <td>Feb 15</td>
+        <td>Apr 10</td>
+    </tr><tr data-vegetable="garlic, clove" data-elevation="4500" data-start="04-01" data-end="04-30">
+        <td>Garlic, clove</td>
+        <td>4500 - 6000</td>
+        <td>Apr 01</td>
+        <td>Apr 30</td>
+    </tr><tr data-vegetable="horseradish" data-elevation="3000" data-start="02-01" data-end="04-30">
+        <td>Horseradish</td>
+        <td>3000 - 4500</td>
+        <td>Feb 01</td>
+        <td>Apr 30</td>
+    </tr><tr data-vegetable="horseradish" data-elevation="4500" data-start="02-15" data-end="03-15">
+        <td>Horseradish</td>
+        <td>4500 - 6000</td>
+        <td>Feb 15</td>
+        <td>Mar 15</td>
+    </tr><tr data-vegetable="horseradish" data-elevation="6000" data-start="04-01" data-end="05-31">
+        <td>Horseradish</td>
+        <td>Above 6000</td>
+        <td>Apr 01</td>
+        <td>May 31</td>
+    </tr><tr data-vegetable="kale" data-elevation="3000" data-start="02-01" data-end="03-20">
+        <td>Kale</td>
+        <td>3000 - 4500</td>
+        <td>Feb 01</td>
+        <td>Mar 20</td>
+    </tr><tr data-vegetable="kale" data-elevation="3000" data-start="08-01" data-end="09-15">
+        <td>Kale</td>
+        <td>3000 - 4500</td>
+        <td>Aug 01</td>
+        <td>Sep 15</td>
+    </tr><tr data-vegetable="kale" data-elevation="4500" data-start="02-15" data-end="04-10">
+        <td>Kale</td>
+        <td>4500 - 6000</td>
+        <td>Feb 15</td>
+        <td>Apr 10</td>
+    </tr><tr data-vegetable="kale" data-elevation="6000" data-start="04-01" data-end="05-31">
+        <td>Kale</td>
+        <td>Above 6000</td>
+        <td>Apr 01</td>
+        <td>May 31</td>
+    </tr><tr data-vegetable="kohlrabi" data-elevation="3000" data-start="02-15" data-end="04-01">
+        <td>Kohlrabi</td>
+        <td>3000 - 4500</td>
+        <td>Feb 15</td>
+        <td>Apr 01</td>
+    </tr><tr data-vegetable="kohlrabi" data-elevation="4500" data-start="04-15" data-end="05-15">
+        <td>Kohlrabi</td>
+        <td>4500 - 6000</td>
+        <td>Apr 15</td>
+        <td>May 15</td>
+    </tr><tr data-vegetable="kohlrabi" data-elevation="6000" data-start="05-15" data-end="06-01">
+        <td>Kohlrabi</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="leek" data-elevation="3000" data-start="02-15" data-end="04-10">
+        <td>Leek</td>
+        <td>3000 - 4500</td>
+        <td>Feb 15</td>
+        <td>Apr 10</td>
+    </tr><tr data-vegetable="leek" data-elevation="4500" data-start="04-01" data-end="04-30">
+        <td>Leek</td>
+        <td>4500 - 6000</td>
+        <td>Apr 01</td>
+        <td>Apr 30</td>
+    </tr><tr data-vegetable="lettuce, head" data-elevation="3000" data-start="02-15" data-end="03-15">
+        <td>Lettuce, head</td>
+        <td>3000 - 4500</td>
+        <td>Feb 15</td>
+        <td>Mar 15</td>
+    </tr><tr data-vegetable="lettuce, head" data-elevation="3000" data-start="07-15" data-end="09-01">
+        <td>Lettuce, head</td>
+        <td>3000 - 4500</td>
+        <td>Jul 15</td>
+        <td>Sep 01</td>
+    </tr><tr data-vegetable="lettuce, head" data-elevation="4500" data-start="07-01" data-end="08-01">
+        <td>Lettuce, head</td>
+        <td>4500 - 6000</td>
+        <td>Jul 01</td>
+        <td>Aug 01</td>
+    </tr><tr data-vegetable="lettuce, head" data-elevation="6000" data-start="06-01" data-end="06-30">
+        <td>Lettuce, head</td>
+        <td>Above 6000</td>
+        <td>Jun 01</td>
+        <td>Jun 30</td>
+    </tr><tr data-vegetable="lettuce, leaf" data-elevation="3000" data-start="03-01" data-end="04-15">
+        <td>Lettuce, leaf</td>
+        <td>3000 - 4500</td>
+        <td>Mar 01</td>
+        <td>Apr 15</td>
+    </tr><tr data-vegetable="lettuce, leaf" data-elevation="3000" data-start="07-15" data-end="09-01">
+        <td>Lettuce, leaf</td>
+        <td>3000 - 4500</td>
+        <td>Jul 15</td>
+        <td>Sep 01</td>
+    </tr><tr data-vegetable="lettuce, leaf" data-elevation="4500" data-start="03-01" data-end="04-15">
+        <td>Lettuce, leaf</td>
+        <td>4500 - 6000</td>
+        <td>Mar 01</td>
+        <td>Apr 15</td>
+    </tr><tr data-vegetable="lettuce, leaf" data-elevation="4500" data-start="08-01" data-end="09-15">
+        <td>Lettuce, leaf</td>
+        <td>4500 - 6000</td>
+        <td>Aug 01</td>
+        <td>Sep 15</td>
+    </tr><tr data-vegetable="lettuce, leaf" data-elevation="6000" data-start="05-01" data-end="07-01">
+        <td>Lettuce, leaf</td>
+        <td>Above 6000</td>
+        <td>May 01</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="muskmelon" data-elevation="3000" data-start="05-10" data-end="06-15">
+        <td>Muskmelon</td>
+        <td>3000 - 4500</td>
+        <td>May 10</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="muskmelon" data-elevation="4500" data-start="05-15" data-end="06-15">
+        <td>Muskmelon</td>
+        <td>4500 - 6000</td>
+        <td>May 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="mustard" data-elevation="3000" data-start="02-15" data-end="07-15">
+        <td>Mustard</td>
+        <td>3000 - 4500</td>
+        <td>Feb 15</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="mustard" data-elevation="4500" data-start="04-01" data-end="07-01">
+        <td>Mustard</td>
+        <td>4500 - 6000</td>
+        <td>Apr 01</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="mustard" data-elevation="6000" data-start="04-01" data-end="05-31">
+        <td>Mustard</td>
+        <td>Above 6000</td>
+        <td>Apr 01</td>
+        <td>May 31</td>
+    </tr><tr data-vegetable="okra" data-elevation="3000" data-start="05-10" data-end="07-01">
+        <td>Okra</td>
+        <td>3000 - 4500</td>
+        <td>May 10</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="okra" data-elevation="4500" data-start="05-15" data-end="06-15">
+        <td>Okra</td>
+        <td>4500 - 6000</td>
+        <td>May 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="okra" data-elevation="6000" data-start="06-01" data-end="06-10">
+        <td>Okra</td>
+        <td>Above 6000</td>
+        <td>Jun 01</td>
+        <td>Jun 10</td>
+    </tr><tr data-vegetable="onion (green, bunch)" data-elevation="3000" data-start="02-15" data-end="04-01">
+        <td>Onion (green, bunch)</td>
+        <td>3000 - 4500</td>
+        <td>Feb 15</td>
+        <td>Apr 01</td>
+    </tr><tr data-vegetable="onion (green, bunch)" data-elevation="4500" data-start="04-15" data-end="05-01">
+        <td>Onion (green, bunch)</td>
+        <td>4500 - 6000</td>
+        <td>Apr 15</td>
+        <td>May 01</td>
+    </tr><tr data-vegetable="onion (green, bunch)" data-elevation="6000" data-start="05-01" data-end="05-31">
+        <td>Onion (green, bunch)</td>
+        <td>Above 6000</td>
+        <td>May 01</td>
+        <td>May 31</td>
+    </tr><tr data-vegetable="onion, dry (seeds)" data-elevation="3000" data-start="11-01" data-end="12-15">
+        <td>Onion, dry (seeds)</td>
+        <td>3000 - 4500</td>
+        <td>Nov 01</td>
+        <td>Dec 15</td>
+    </tr><tr data-vegetable="onion, dry (seeds)" data-elevation="4500" data-start="10-15" data-end="01-01">
+        <td>Onion, dry (seeds)</td>
+        <td>4500 - 6000</td>
+        <td>Oct 15</td>
+        <td>Jan 01</td>
+    </tr><tr data-vegetable="onion, dry (seeds)" data-elevation="4500" data-start="02-15" data-end="04-15">
+        <td>Onion, dry (seeds)</td>
+        <td>4500 - 6000</td>
+        <td>Feb 15</td>
+        <td>Apr 15</td>
+    </tr><tr data-vegetable="onion, dry (seeds)" data-elevation="6000" data-start="10-15" data-end="01-01">
+        <td>Onion, dry (seeds)</td>
+        <td>Above 6000</td>
+        <td>Oct 15</td>
+        <td>Jan 01</td>
+    </tr><tr data-vegetable="onion, dry (seeds)" data-elevation="6000" data-start="04-01" data-end="04-31">
+        <td>Onion, dry (seeds)</td>
+        <td>Above 6000</td>
+        <td>Apr 01</td>
+        <td>Apr 30</td>
+    </tr><tr data-vegetable="onion, dry (sets)" data-elevation="3000" data-start="01-15" data-end="03-15">
+        <td>Onion, dry (sets)</td>
+        <td>3000 - 4500</td>
+        <td>Jan 15</td>
+        <td>Mar 15</td>
+    </tr><tr data-vegetable="onion, dry (sets)" data-elevation="3000" data-start="11-15" data-end="01-15">
+        <td>Onion, dry (sets)</td>
+        <td>3000 - 4500</td>
+        <td>Nov 15</td>
+        <td>Jan 15</td>
+    </tr><tr data-vegetable="onion, dry (sets)" data-elevation="4500" data-start="04-01" data-end="04-15">
+        <td>Onion, dry (sets)</td>
+        <td>4500 - 6000</td>
+        <td>Apr 01</td>
+        <td>Apr 15</td>
+    </tr><tr data-vegetable="onion, dry (sets)" data-elevation="4500" data-start="11-01" data-end="02-01">
+        <td>Onion, dry (sets)</td>
+        <td>4500 - 6000</td>
+        <td>Nov 01</td>
+        <td>Feb 01</td>
+    </tr><tr data-vegetable="onion, dry (sets)" data-elevation="6000" data-start="04-15" data-end="06-01">
+        <td>Onion, dry (sets)</td>
+        <td>Above 6000</td>
+        <td>Apr 15</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="onion, dry (sets)" data-elevation="6000" data-start="11-01" data-end="02-15">
+        <td>Onion, dry (sets)</td>
+        <td>Above 6000</td>
+        <td>Nov 01</td>
+        <td>Feb 15</td>
+    </tr><tr data-vegetable="parsley" data-elevation="3000" data-start="02-15" data-end="04-15">
+        <td>Parsley</td>
+        <td>3000 - 4500</td>
+        <td>Feb 15</td>
+        <td>Apr 15</td>
+    </tr><tr data-vegetable="parsley" data-elevation="4500" data-start="04-01" data-end="04-15">
+        <td>Parsley</td>
+        <td>4500 - 6000</td>
+        <td>Apr 01</td>
+        <td>Apr 15</td>
+    </tr><tr data-vegetable="parsley" data-elevation="6000" data-start="05-01" data-end="05-31">
+        <td>Parsley</td>
+        <td>Above 6000</td>
+        <td>May 01</td>
+        <td>May 31</td>
+    </tr><tr data-vegetable="parsnip" data-elevation="3000" data-start="05-01" data-end="06-15">
+        <td>Parsnip</td>
+        <td>3000 - 4500</td>
+        <td>May 01</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="parsnip" data-elevation="4500" data-start="06-01" data-end="05-20">
+        <td>Parsnip</td>
+        <td>4500 - 6000</td>
+        <td>Jun 01</td>
+        <td>May 20</td>
+    </tr><tr data-vegetable="parsnip" data-elevation="6000" data-start="04-01" data-end="05-31">
+        <td>Parsnip</td>
+        <td>Above 6000</td>
+        <td>Apr 01</td>
+        <td>May 31</td>
+    </tr><tr data-vegetable="pea, fall" data-elevation="3000" data-start="03-01" data-end="05-01">
+        <td>Pea, fall</td>
+        <td>3000 - 4500</td>
+        <td>Mar 01</td>
+        <td>May 01</td>
+    </tr><tr data-vegetable="pea, spring" data-elevation="3000" data-start="07-20" data-end="08-25">
+        <td>Pea, spring</td>
+        <td>3000 - 4500</td>
+        <td>Jul 20</td>
+        <td>Aug 25</td>
+    </tr><tr data-vegetable="pea, spring" data-elevation="4500" data-start="02-15" data-end="04-15">
+        <td>Pea, spring</td>
+        <td>4500 - 6000</td>
+        <td>Feb 15</td>
+        <td>Apr 15</td>
+    </tr><tr data-vegetable="pea, spring" data-elevation="6000" data-start="05-01" data-end="06-01">
+        <td>Pea, spring</td>
+        <td>Above 6000</td>
+        <td>May 01</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="pepper (seed)" data-elevation="3000" data-start="02-01" data-end="03-15">
+        <td>Pepper (seed)</td>
+        <td>3000 - 4500</td>
+        <td>Feb 01</td>
+        <td>Mar 15</td>
+    </tr><tr data-vegetable="pepper (seed)" data-elevation="4500" data-start="03-01" data-end="04-01">
+        <td>Pepper (seed)</td>
+        <td>4500 - 6000</td>
+        <td>Mar 01</td>
+        <td>Apr 01</td>
+    </tr><tr data-vegetable="pepper (seed)" data-elevation="6000" data-start="04-01" data-end="04-15">
+        <td>Pepper (seed)</td>
+        <td>Above 6000</td>
+        <td>Apr 01</td>
+        <td>Apr 15</td>
+    </tr><tr data-vegetable="pepper (plants)" data-elevation="3000" data-start="02-15" data-end="03-30">
+        <td>Pepper (plants)</td>
+        <td>3000 - 4500</td>
+        <td>Feb 15</td>
+        <td>Mar 30</td>
+    </tr><tr data-vegetable="pepper (plants)" data-elevation="4500" data-start="05-10" data-end="05-25">
+        <td>Pepper (plants)</td>
+        <td>4500 - 6000</td>
+        <td>May 10</td>
+        <td>May 25</td>
+    </tr><tr data-vegetable="pepper (plants)" data-elevation="6000" data-start="05-15" data-end="06-01">
+        <td>Pepper (plants)</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="potato, irish" data-elevation="3000" data-start="05-10" data-end="06-01">
+        <td>Potato, Irish</td>
+        <td>3000 - 4500</td>
+        <td>May 10</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="potato, irish" data-elevation="4500" data-start="05-10" data-end="06-01">
+        <td>Potato, Irish</td>
+        <td>4500 - 6000</td>
+        <td>May 10</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="potato, irish" data-elevation="6000" data-start="05-15" data-end="06-01">
+        <td>Potato, Irish</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="potato, sweet" data-elevation="3000" data-start="05-10" data-end="05-25">
+        <td>Potato, sweet</td>
+        <td>3000 - 4500</td>
+        <td>May 10</td>
+        <td>May 25</td>
+    </tr><tr data-vegetable="potato, sweet" data-elevation="4500" data-start="05-15" data-end="05-20">
+        <td>Potato, sweet</td>
+        <td>4500 - 6000</td>
+        <td>May 15</td>
+        <td>May 20</td>
+    </tr><tr data-vegetable="pumpkin" data-elevation="3000" data-start="05-15" data-end="07-01">
+        <td>Pumpkin</td>
+        <td>3000 - 4500</td>
+        <td>May 15</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="pumpkin" data-elevation="4500" data-start="05-20" data-end="06-15">
+        <td>Pumpkin</td>
+        <td>4500 - 6000</td>
+        <td>May 20</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="pumpkin" data-elevation="6000" data-start="05-25" data-end="06-10">
+        <td>Pumpkin</td>
+        <td>Above 6000</td>
+        <td>May 25</td>
+        <td>Jun 10</td>
+    </tr><tr data-vegetable="radish" data-elevation="3000" data-start="03-01" data-end="05-15">
+        <td>Radish</td>
+        <td>3000 - 4500</td>
+        <td>Mar 01</td>
+        <td>May 15</td>
+    </tr><tr data-vegetable="radish" data-elevation="3000" data-start="07-15" data-end="09-15">
+        <td>Radish</td>
+        <td>3000 - 4500</td>
+        <td>Jul 15</td>
+        <td>Sep 15</td>
+    </tr><tr data-vegetable="radish" data-elevation="4500" data-start="04-01" data-end="06-15">
+        <td>Radish</td>
+        <td>4500 - 6000</td>
+        <td>Apr 01</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="radish" data-elevation="6000" data-start="05-15" data-end="06-15">
+        <td>Radish</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="rhubarb" data-elevation="3000" data-start="03-01" data-end="04-20">
+        <td>Rhubarb</td>
+        <td>3000 - 4500</td>
+        <td>Mar 01</td>
+        <td>Apr 20</td>
+    </tr><tr data-vegetable="rhubarb" data-elevation="4500" data-start="03-01" data-end="04-01">
+        <td>Rhubarb</td>
+        <td>4500 - 6000</td>
+        <td>Mar 01</td>
+        <td>Apr 01</td>
+    </tr><tr data-vegetable="rhubarb" data-elevation="6000" data-start="04-01" data-end="04-30">
+        <td>Rhubarb</td>
+        <td>Above 6000</td>
+        <td>Apr 01</td>
+        <td>Apr 30</td>
+    </tr><tr data-vegetable="rutabaga" data-elevation="3000" data-start="03-01" data-end="04-01">
+        <td>Rutabaga</td>
+        <td>3000 - 4500</td>
+        <td>Mar 01</td>
+        <td>Apr 01</td>
+    </tr><tr data-vegetable="rutabaga" data-elevation="4500" data-start="04-01" data-end="05-15">
+        <td>Rutabaga</td>
+        <td>4500 - 6000</td>
+        <td>Apr 01</td>
+        <td>May 15</td>
+    </tr><tr data-vegetable="rutabaga" data-elevation="6000" data-start="05-01" data-end="06-01">
+        <td>Rutabaga</td>
+        <td>Above 6000</td>
+        <td>May 01</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="salsify" data-elevation="3000" data-start="03-15" data-end="06-01">
+        <td>Salsify</td>
+        <td>3000 - 4500</td>
+        <td>Mar 15</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="salsify" data-elevation="4500" data-start="04-01" data-end="05-15">
+        <td>Salsify</td>
+        <td>4500 - 6000</td>
+        <td>Apr 01</td>
+        <td>May 15</td>
+    </tr><tr data-vegetable="salsify" data-elevation="6000" data-start="05-01" data-end="06-01">
+        <td>Salsify</td>
+        <td>Above 6000</td>
+        <td>May 01</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="spinach" data-elevation="3000" data-start="02-15" data-end="04-15">
+        <td>Spinach</td>
+        <td>3000 - 4500</td>
+        <td>Feb 15</td>
+        <td>Apr 15</td>
+    </tr><tr data-vegetable="spinach" data-elevation="3000" data-start="07-15" data-end="08-15">
+        <td>Spinach</td>
+        <td>3000 - 4500</td>
+        <td>Jul 15</td>
+        <td>Aug 15</td>
+    </tr><tr data-vegetable="spinach" data-elevation="4500" data-start="04-01" data-end="05-15">
+        <td>Spinach</td>
+        <td>4500 - 6000</td>
+        <td>Apr 01</td>
+        <td>May 15</td>
+    </tr><tr data-vegetable="spinach" data-elevation="6000" data-start="05-01" data-end="06-01">
+        <td>Spinach</td>
+        <td>Above 6000</td>
+        <td>May 01</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="squash, summer" data-elevation="3000" data-start="05-10" data-end="07-15">
+        <td>Squash, summer</td>
+        <td>3000 - 4500</td>
+        <td>May 10</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="squash, summer" data-elevation="4500" data-start="05-01" data-end="07-01">
+        <td>Squash, summer</td>
+        <td>4500 - 6000</td>
+        <td>May 01</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="squash, summer" data-elevation="6000" data-start="05-15" data-end="06-15">
+        <td>Squash, summer</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="squash, winter" data-elevation="3000" data-start="05-10" data-end="07-15">
+        <td>Squash, winter</td>
+        <td>3000 - 4500</td>
+        <td>May 10</td>
+        <td>Jul 15</td>
+    </tr><tr data-vegetable="squash, winter" data-elevation="4500" data-start="05-15" data-end="07-01">
+        <td>Squash, winter</td>
+        <td>4500 - 6000</td>
+        <td>May 15</td>
+        <td>Jul 01</td>
+    </tr><tr data-vegetable="squash, winter" data-elevation="6000" data-start="05-15" data-end="06-10">
+        <td>Squash, winter</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jun 10</td>
+    </tr><tr data-vegetable="tomato (seed)" data-elevation="3000" data-start="03-01" data-end="04-01">
+        <td>Tomato (seed)</td>
+        <td>3000 - 4500</td>
+        <td>Mar 01</td>
+        <td>Apr 01</td>
+    </tr><tr data-vegetable="tomato (seed)" data-elevation="4500" data-start="03-01" data-end="04-01">
+        <td>Tomato (seed)</td>
+        <td>4500 - 6000</td>
+        <td>Mar 01</td>
+        <td>Apr 01</td>
+    </tr><tr data-vegetable="tomato (seed)" data-elevation="6000" data-start="04-01" data-end="04-10">
+        <td>Tomato (seed)</td>
+        <td>Above 6000</td>
+        <td>Apr 01</td>
+        <td>Apr 10</td>
+    </tr><tr data-vegetable="tomato (plants)" data-elevation="3000" data-start="04-01" data-end="06-15">
+        <td>Tomato (plants)</td>
+        <td>3000 - 4500</td>
+        <td>Apr 01</td>
+        <td>Jun 15</td>
+    </tr><tr data-vegetable="tomato (plants)" data-elevation="4500" data-start="05-10" data-end="06-01">
+        <td>Tomato (plants)</td>
+        <td>4500 - 6000</td>
+        <td>May 10</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="tomato (plants)" data-elevation="6000" data-start="05-25" data-end="06-01">
+        <td>Tomato (plants)</td>
+        <td>Above 6000</td>
+        <td>May 25</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="turnip" data-elevation="3000" data-start="03-01" data-end="04-15">
+        <td>Turnip</td>
+        <td>3000 - 4500</td>
+        <td>Mar 01</td>
+        <td>Apr 15</td>
+    </tr><tr data-vegetable="turnip" data-elevation="3000" data-start="08-15" data-end="09-15">
+        <td>Turnip</td>
+        <td>3000 - 4500</td>
+        <td>Aug 15</td>
+        <td>Sep 15</td>
+    </tr><tr data-vegetable="turnip" data-elevation="4500" data-start="04-01" data-end="05-15">
+        <td>Turnip</td>
+        <td>4500 - 6000</td>
+        <td>Apr 01</td>
+        <td>May 15</td>
+    </tr><tr data-vegetable="turnip" data-elevation="6000" data-start="05-15" data-end="06-01">
+        <td>Turnip</td>
+        <td>Above 6000</td>
+        <td>May 15</td>
+        <td>Jun 01</td>
+    </tr><tr data-vegetable="watermelon" data-elevation="3000" data-start="05-10" data-end="06-25">
+        <td>Watermelon</td>
+        <td>3000 - 4500</td>
+        <td>May 10</td>
+        <td>Jun 25</td>
+    </tr><tr data-vegetable="watermelon" data-elevation="4500" data-start="05-01" data-end="06-01">
+        <td>Watermelon</td>
+        <td>4500 - 6000</td>
+        <td>May 01</td>
+        <td>Jun 01</td>
+    </tr></tbody>
+</table>
+
+<script src="js/app.js"></script>
+
+    </body>
+</html>

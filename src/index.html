@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet">
+        <!-- Source https://prescottvalleynursery.com/2015/05/15/garden-guide-planting-dates/ -->
+    </head>
+    <body>
+
+<h1>Planting Dates</h1>
+
+<h2>Filter</h2>
+<div class=row>
+    <div>
+        <label>Elevation</label><br>
+        <select id=elevation>
+            <option selected value=""></option>
+            <option value="3000">3000 - 4500</option>
+            <option value="4500">4500 - 6000</option>
+            <option value="6000">Above 6000</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="search">Search</label><br>
+        <input id="search" list="vegetables" placeholder="Search" autocomplete="off">
+        <datalist id="vegetables">{{vegetables}}</datalist>
+    </div>
+
+    <div>
+        <label for=start>Start Date</label><br>
+        <input type="date" id="start" name="start">
+    </div>
+
+    <div>
+        <label for=end>End Date</label><br>
+        <input type="date" id="end" name="end">
+    </div>
+
+    <div>
+        <br>
+        <button id=reset>Reset</button>
+    </div>
+</div>
+
+<br>
+
+<h2>Growing Season</h2>
+
+<p>Vegetables and grow season (<span id=count></span>):</p>
+<table>
+    <thead>
+        <th>Vegetable</th>
+        <th>Elevation (ft)</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+    </thead>
+    <tbody>{{data}}</tbody>
+</table>
+
+<script src="js/app.js"></script>
+
+    </body>
+</html>

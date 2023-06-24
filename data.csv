@@ -1,0 +1,174 @@
+vegetable,elevation,start,end
+Asparagus,3000,02-15,04-01
+Asparagus,4500,04-01,04-30
+Asparagus,6000,04-15,05-15
+"Bean, bush",3000,04-25,07-15
+"Bean, bush",4500,05-15,07-01
+"Bean, bush",6000,05-25,06-15
+"Bean, pole",3000,04-25,07-15
+"Bean, pole",4500,05-15,07-01
+"Bean, pole",6000,05-25,06-15
+"Bean, lima",3000,04-25,07-15
+"Bean, lima",4500,05-15,07-01
+"Bean, lima",6000,05-25,06-15
+Bean (edible soy), 3000,04-15,07-15
+Bean (edible soy), 4500,05-25,07-01
+Beet,3000,03-01,05-15
+Beet,4500,05-01,07-15
+Beet,6000,05-15,06-15
+Broccoli,3000,04-15,07-15
+Broccoli,4500,04-01,07-01
+Brussel Sprouts,3000,07-01,08-01
+Brussel Sprouts,4500,06-01,07-01
+Brussel Sprouts,6000,05-15,06-15
+Cabbage (seed),3000,02-15,04-15
+Cabbage (seed),4500,03-15,03-15
+Cabbage (seed),6000,04-01,04-01
+Cabbage (plant),3000,03-15,05-01
+Cabbage (plant),3000,07-10,08-20
+Cabbage (plant),4500,05-01,06-01
+Cabbage (plant),6000,05-15,06-15
+Cantaloupe,3000,05-01,06-20
+Cantaloupe,4500,05-15,06-15
+Cantaloupe,6000,05-25,06-10
+Carrot,3000,03-01,05-10
+Carrot,3000,07-15,09-15
+Carrot,4500,05-01,07-15
+Carrot,6000,05-15,07-01
+Cauliflower (seed),3000,02-15,04-15
+Cauliflower (seed),4500,03-15,03-15
+Cauliflower (seed),6000,04-01,04-01
+Cauliflower (plant),3000,03-15,05-01
+Cauliflower (plant),3000,07-10,08-20
+Cauliflower (plant),4500,05-01,06-01
+Cauliflower (plant),6000,05-15,06-15
+Celery,3000,05-15,06-20
+Celery,4500,06-15,07-15
+Chard,3000,02-15,04-30
+Chard,3000,07-15,09-15
+Chard,4500,03-01,04-10
+Chard,4500,07-01,08-01
+Chinese Cabbage,3000,07-01,09-15
+Chinese Cabbage,4500,06-01,07-15
+Chinese Cabbage,6000,05-15,06-15
+Collard,3000,06-15,08-01
+Collard,4500,06-01,07-15
+Collard,6000,05-15,06-15
+"Corn, sweet",3000,05-10,07-15
+"Corn, sweet",4500,05-25,07-01
+"Corn, sweet",6000,05-15,07-01
+"Corn, Mexican June",3000,05-10,07-15
+"Corn, Mexican June",4500,05-25,06-15
+"Corn, Mexican June",6000,06-01,06-10
+Cucumber,3000,05-10,06-15
+Cucumber,4500,05-15,06-15
+Eggplant,3000,05-01,06-15
+Eggplant,4500,05-15,06-15
+Eggplant,6000,06-01,06-25
+Endive,3000,02-01,04-01
+Endive,4500,04-15,06-15
+Endive,6000,05-15,06-15
+Garlic,3000,02-15,04-10
+"Garlic, clove",4500,04-01,04-30
+Horseradish,3000,02-01,04-30
+Horseradish,4500,02-15,03-15
+Horseradish,6000,04-01,05-31
+Kale,3000,02-01,03-20
+Kale,3000,08-01,09-15
+Kale,4500,02-15,04-10
+Kale,6000,04-01,05-31
+Kohlrabi,3000,02-15,04-01
+Kohlrabi,4500,04-15,05-15
+Kohlrabi,6000,05-15,06-01
+Leek,3000,02-15,04-10
+Leek,4500,04-01,04-30
+"Lettuce, head",3000,02-15,03-15
+"Lettuce, head",3000,07-15,09-01
+"Lettuce, head",4500,07-01,08-01
+"Lettuce, head",6000,06-01,06-30
+"Lettuce, leaf",3000,03-01,04-15
+"Lettuce, leaf",3000,07-15,09-01
+"Lettuce, leaf",4500,03-01,04-15
+"Lettuce, leaf",4500,08-01,09-15
+"Lettuce, leaf",6000,05-01,07-01
+Muskmelon,3000,05-10,06-15
+Muskmelon,4500,05-15,06-15
+Mustard,3000,02-15,07-15
+Mustard,4500,04-01,07-01
+Mustard,6000,04-01,05-31
+Okra,3000,05-10,07-01
+Okra,4500,05-15,06-15
+Okra,6000,06-01,06-10
+"Onion (green, bunch)",3000,02-15,04-01
+"Onion (green, bunch)",4500,04-15,05-01
+"Onion (green, bunch)",6000,05-01,05-31
+"Onion, dry (seeds)",3000,11-01,12-15
+"Onion, dry (seeds)",4500,10-15,01-01
+"Onion, dry (seeds)",4500,02-15,04-15
+"Onion, dry (seeds)",6000,10-15,01-01
+"Onion, dry (seeds)",6000,04-01,04-31
+"Onion, dry (sets)",3000,01-15,03-15
+"Onion, dry (sets)",3000,11-15,01-15
+"Onion, dry (sets)",4500,04-01,04-15
+"Onion, dry (sets)",4500,11-01,02-01
+"Onion, dry (sets)",6000,04-15,06-01
+"Onion, dry (sets)",6000,11-01,02-15
+Parsley,3000,02-15,04-15
+Parsley,4500,04-01,04-15
+Parsley,6000,05-01,05-31
+Parsnip,3000,05-01,06-15
+Parsnip,4500,06-01,05-20
+Parsnip,6000,04-01,05-31
+"Pea, fall",3000,03-01,05-01
+"Pea, spring",3000,07-20,08-25
+"Pea, spring",4500,02-15,04-15
+"Pea, spring",6000,05-01,06-01
+Pepper (seed),3000,02-01,03-15
+Pepper (seed),4500,03-01,04-01
+Pepper (seed),6000,04-01,04-15
+Pepper (plants),3000,02-15,03-30
+Pepper (plants),4500,05-10,05-25
+Pepper (plants),6000,05-15,06-01
+"Potato, Irish",3000,05-10,06-01
+"Potato, Irish",4500,05-10,06-01
+"Potato, Irish",6000,05-15,06-01
+"Potato, sweet",3000,05-10,05-25
+"Potato, sweet",4500,05-15,05-20
+Pumpkin,3000,05-15,07-01
+Pumpkin,4500,05-20,06-15
+Pumpkin,6000,05-25,06-10
+Radish,3000,03-01,05-15
+Radish,3000,07-15,09-15
+Radish,4500,04-01,06-15
+Radish,6000,05-15,06-15
+Rhubarb,3000,03-01,04-20
+Rhubarb,4500,03-01,04-01
+Rhubarb,6000,04-01,04-30
+Rutabaga,3000,03-01,04-01
+Rutabaga,4500,04-01,05-15
+Rutabaga,6000,05-01,06-01
+Salsify,3000,03-15,06-01
+Salsify,4500,04-01,05-15
+Salsify,6000,05-01,06-01
+Spinach,3000,02-15,04-15
+Spinach,3000,07-15,08-15
+Spinach,4500,04-01,05-15
+Spinach,6000,05-01,06-01
+"Squash, summer",3000,05-10,07-15
+"Squash, summer",4500,05-01,07-01
+"Squash, summer",6000,05-15,06-15
+"Squash, winter",3000,05-10,07-15
+"Squash, winter",4500,05-15,07-01
+"Squash, winter",6000,05-15,06-10
+Tomato (seed),3000,03-01,04-01
+Tomato (seed),4500,03-01,04-01
+Tomato (seed),6000,04-01,04-10
+Tomato (plants),3000,04-01,06-15
+Tomato (plants),4500,05-10,06-01
+Tomato (plants),6000,05-25,06-01
+Turnip,3000,03-01,04-15
+Turnip,3000,08-15,09-15
+Turnip,4500,04-01,05-15
+Turnip,6000,05-15,06-01
+Watermelon,3000,05-10,06-25
+Watermelon,4500,05-01,06-01
