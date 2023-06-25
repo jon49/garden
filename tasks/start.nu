@@ -1,6 +1,9 @@
 #!/usr/bin/env nu
 
-let rawData = (open data.csv)
+let rawData = (
+    open data.csv
+    | sort-by vegetable elevation -i
+)
 
 let data = (
 $rawData

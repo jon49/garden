@@ -19,6 +19,37 @@ $reset.addEventListener("click", () => {
     filter()
 })
 
+let $header = document.querySelector('thead')
+$header.addEventListener("click", (e) => {
+    let target = e.target.closest('th')
+    if (target.tagName !== 'TH') return
+    sort = target.dataset.sort
+    if (!sort) return
+    let tbody = document.querySelector('tbody')
+    let direction =
+        target.classList.contains('asc')
+            ? 'desc'
+        : target.classList.contains('desc')
+            ? 'asc'
+        : 'asc'
+    for (let th of $header.querySelectorAll('th')) {
+        th.classList.remove('asc', 'desc')
+    }
+    target.classList.add(direction)
+    let rows = Array.from(document.querySelectorAll('tbody>tr'))
+    rows.sort((a, b) => {
+        let aVal = a.dataset[sort],
+            bVal = b.dataset[sort]
+        return (aVal < bVal)
+           ? -1
+        : (aVal > bVal)
+            ? 1
+        : 0
+    })
+    if (direction === 'desc') rows.reverse()
+    rows.forEach(tr => tbody.appendChild(tr))
+})
+
 function filter() {
     let vegetable = $search.value.trim().toLowerCase(),
         elevation = $elevation.value,

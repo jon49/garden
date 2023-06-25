@@ -33,3 +33,21 @@ select {
     font-size: 1.5em;
 }
 
+/**/
+th::after {
+    content: " \27A4";
+    cursor: pointer;
+}
+
+th.asc::after {
+    content: " \27A4";
+    writing-mode: sideways-rl;
+    cursor: pointer;
+}
+
+th.desc::after {
+    content: " \27A4";
+    writing-mode: sideways-lr;
+    cursor: pointer;
+}
+
