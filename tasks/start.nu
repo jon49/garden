@@ -35,15 +35,7 @@ $rawData
 }
 | str join '')
 
-let vegetables = (
-$rawData
-| get vegetable
-| sort | uniq
-| each { |it| $'<option value="($it)"></option>' }
-| str join '')
-
 open ./src/index.html
 | str replace '{{data}}' $data
-| str replace '{{vegetables}}' $vegetables
 | save -f ./index.html
 
